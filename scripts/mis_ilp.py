@@ -75,7 +75,7 @@ def solve_maximum_independent_set(connected_nodes,args):
 
     # Retrieve the maximum independent set
     independent_set = []
-    if model.Status == GRB.OPTIMAL:
+    if model.Status in [GRB.OPTIMAL, GRB.TIME_LIMIT]:
         for node in connected_nodes.keys():
             if x[node].X > 0.5:
                 independent_set.append(node)
