@@ -28,7 +28,7 @@ First, create a file named `gurobi.json` containing the details for the Gurobi l
 
 ## Running the Tool
 
-Ensure that the files follow the format of the example file `example.fa.gz` which is inside the `data` folder.
+Ensure that the files follow the format of the example file `example.fa.gz` which is inside the `data` folder. Furthermore, we added the datasets used in the paper to that same folder.
 
 ### Running FiSSC
 
