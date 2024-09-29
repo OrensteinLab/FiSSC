@@ -89,7 +89,7 @@ def greedy_solutions(experiment_name):
 
     starting_time = time.time()
     print(f'Running greedy MIS on {experiment_name} with {len(uncovered_sequences)} sequences')
-    indepedent_set = maximal_independent_set(graph) + len(covering_sequences)
+    indepedent_set_size = len(maximal_independent_set(graph)) + len(covering_sequences)
     print(f'MIS time: {time.time()-starting_time} seconds')
 
     starting_time = time.time()
@@ -97,12 +97,12 @@ def greedy_solutions(experiment_name):
     cover_size = clique_cover(graph)+ len(covering_sequences)
     print(f'Clique cover time: {time.time()-starting_time} seconds')
 
-    print(f'MIS size: {len(indepedent_set)}')
+    print(f'MIS size: {indepedent_set_size}')
     print(print(f'Clique cover size: {cover_size}'))
 
     # save the sizes to a file
     with open(f'output/{experiment_name}_greedy_results.txt', 'w') as f:
-        f.write(f'MIS size: {len(indepedent_set)}\n')
+        f.write(f'MIS size: {indepedent_set_size}\n')
         f.write(f'Clique cover size: {cover_size}\n')
 
                     

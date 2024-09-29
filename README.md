@@ -15,7 +15,7 @@ The tool has been tested with the following configuration on a Linux machine:
 
  
 ## Setting Up the Tool
-First, create a file named `gurobi.json` containing the details for the Gurobi license.
+First, create a file named `gurobi.json` containing the details for the Gurobi license and put it in the main directory.
 
 ```json
 {
@@ -28,24 +28,24 @@ First, create a file named `gurobi.json` containing the details for the Gurobi l
 
 ## Running the Tool
 
-Ensure that the zipped FASTA files are placed in the `data` folder. The files should follow the format of the example file `example.fa.gz`.
+Ensure that the files follow the format of the example file `example.fa.gz` which is inside the `data` folder.
 
-### Running the FiSSC Algorithm
+### Running FiSSC
 
-To execute the FiSSC algorithm, use the following command:
+To execute FiSSC, use the following command:
 
 ```bash
 python ./tool.py --file_name <file-name> --ILP_time_restriction_in_minutes <minutes> --threads <thread_count> [--do_logs]
 ```
 
-- **file_name**: Only include the name of the file, without a path to the `data` folder.
+- **file_name**: The relative or absolute path to the file.
 - **ILP_time_restriction_in_minutes**: Specify an integer to set the time limit (in minutes) for the ILP solver per connected component in the read graph, default is 4 hours.
 - **threads**: Define the number of threads available for the ILP solver.
 - **--do_logs** (optional): Generates a CSV log file for the filtering process.
 
 Example command:
 ```bash
-python ./tool.py --file_name example.fa.gz --ILP_time_restriction_in_minutes 240 --threads 64 --do_logs
+python ./tool.py --file_name data/example.fa.gz --ILP_time_restriction_in_minutes 240 --threads 64 --do_logs
 ```
 
 
@@ -55,9 +55,9 @@ The tool produces the following files in the `output` folder:
 
 [comment]: <> (Add contact in the final submission)
 
-### Running other Algorithms
+### Running Baseline Methods
 
-To execute the other algorithms, use the following command:
+To execute the baseline methods, use the following command:
 
 ```bash
 python ./tool.py --algorithm <algorithm> --file_name <file-name> 
@@ -72,7 +72,7 @@ The available options are:
 
 Example command:
 ```bash
-python ./tool.py --algorithm Greedy --file_name example.fa.gz 
+python ./tool.py --algorithm Greedy --file_name data/example.fa.gz 
 ```
 
 
@@ -80,5 +80,5 @@ python ./tool.py --algorithm Greedy --file_name example.fa.gz
 
 Example command:
 ```bash
-python ./tool.py --algorithm MIS_ILP --file_name example.fa.gz --ILP_time_restriction_in_minutes 1440 
+python ./tool.py --algorithm MIS_ILP --file_name data/example.fa.gz --ILP_time_restriction_in_minutes 1440 
 ```

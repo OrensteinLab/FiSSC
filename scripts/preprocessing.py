@@ -97,6 +97,10 @@ def preprocess(experiment_file_path, experiment_name):
     # save the variable_positions to csv file
     df_only_variables.to_csv(f'data/{experiment_name}.csv')
 
+    # make sure the output directory exists
+    if not os.path.exists('output'):
+        os.makedirs('output')
+
     # save concensous string to text file
     with open(f'output/{experiment_name}_concensous.txt', "w") as text_file:
         text_file.write(concensous_string)

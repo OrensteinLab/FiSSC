@@ -36,6 +36,9 @@ def paper_algorithm(args, experiment_name, file_path):
     print(f'Working on {experiment_name}, {file_path}')
     preprocessed_file = f'data/{experiment_name}.csv'
     sequences = pd.read_csv(preprocessed_file)['Sequence'].values
+    # create logs folder
+    if not os.path.exists('logs'):
+        os.makedirs('logs')
     filter = Filter(sequences, log_file_path=f'logs/{experiment_name}_filter_log.csv', do_logs=args.do_logs)
     final_working_sequences, final_picked_sequences, history = filter.do_filter()
 
@@ -83,7 +86,9 @@ def main():
     args = get_args()
     set_constant_seeds()
 
-    file_path = 'data/' + args.file_name
+
+    file_path =  args.file_name
+
     experiment_name = get_experiment_name(file_path)
 
     if is_preprocessed_already(experiment_name):
