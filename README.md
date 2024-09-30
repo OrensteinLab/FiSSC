@@ -28,7 +28,8 @@ First, create a file named `gurobi.json` containing the details for the Gurobi l
 
 ## Running the Tool
 
-Ensure that the files follow the format of the example file `example.fa.gz` which is inside the `data` folder. Furthermore, we added the datasets used in the paper to that same folder.
+Ensure that all files follow the format of the `example.fa.gz` file located in the `data` folder. Additionally, we have included the datasets used in the paper within the same folder, containing only the varying positions as requested by the lab that produced the data. It’s important to note that FiSSC is designed to handle sequence libraries with non-varying positions as well, as it automatically ignores any non-varying positions.
+
 
 ### Running FiSSC
 
