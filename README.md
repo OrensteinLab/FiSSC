@@ -14,7 +14,7 @@ The tool has been tested with the following configuration on a Linux machine:
 - Pandas 2.1.2
 
  
-## Setting Up the Tool
+## Setting up
 First, create a file named `gurobi.json` containing the details for the Gurobi license and put it in the main directory.
 
 ```json
@@ -26,7 +26,7 @@ First, create a file named `gurobi.json` containing the details for the Gurobi l
 ```
 
 
-## Running the Tool
+## Running
 
 Ensure that all files follow the format of the `example.fa.gz` file located in the `data` folder. Additionally, we have included the datasets used in the paper within the same folder.
 
@@ -56,7 +56,7 @@ The tool produces the following files in the `output` folder:
 
 [comment]: <> (Add contact in the final submission)
 
-### Running Baseline Methods
+### Running baseline methods
 
 To execute the baseline methods, use the following command:
 
